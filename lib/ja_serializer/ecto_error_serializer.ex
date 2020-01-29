@@ -84,8 +84,8 @@ defmodule JaSerializer.EctoErrorSerializer do
   # ideas this will work for most relationships.
   defp pointer_for(field) do
     case Regex.run(~r/(.*)_id$/, to_string(field)) do
-      nil -> "/data/attributes/#{Utils.format_key(field)}"
-      [_, rel] -> "/data/relationships/#{Utils.format_key(rel)}"
+      nil -> "data/attributes/#{Utils.format_key(field)}"
+      [_, rel] -> "data/relationships/#{Utils.format_key(rel)}"
     end
   end
 end
